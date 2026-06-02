@@ -1,0 +1,65 @@
+/* 搜索栏 */
+.search-bar {
+  display: flex; padding: 16px; background: #fff;
+}
+.search-bar input {
+  flex:1; height: 36px; border-radius: 18px;
+  background: #f5f5f5; padding: 0 16px; font-size: 14px;
+  border: none;
+}
+.search-btn {
+  margin-left: 12px; color: #ff4d4f; font-weight: 600;
+  font-size: 14px; line-height: 36px;
+}
+
+/* Banner */
+.banner { height: 180px; }
+.banner-item {
+  height: 100%; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; color: #fff;
+}
+.banner-title { font-size: 22px; font-weight: 700; }
+.banner-sub { font-size: 13px; margin-top: 6px; opacity: 0.85; }
+
+/* 分类 */
+.category {
+  display: flex; flex-wrap: wrap; background: #fff;
+  padding: 12px 0; margin-bottom: 10px;
+}
+.cat-item {
+  width: 20%; display: flex; flex-direction: column;
+  align-items: center; padding: 10px 0;
+}
+.cat-icon { font-size: 28px; }
+.cat-name { font-size: 12px; color: #666; margin-top: 4px; }
+
+/* 标题 */
+.section-title {
+  padding: 16px; font-size: 16px; font-weight: 700;
+  background: #fff; margin-bottom: 1px;
+}
+
+/* 商品网格 */
+.goods-grid {
+  display: flex; flex-wrap: wrap; padding: 6px;
+}
+.goods-card {
+  width: 48%; margin: 1%; background: #fff;
+  border-radius: 8px; overflow: hidden;
+}
+.goods-img {
+  height: 160px; background: linear-gradient(135deg, #ffecd2, #fcb69f);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 48px;
+}
+.goods-info { padding: 10px; }
+.goods-name { font-size: 14px; font-weight: 600; display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.goods-desc { font-size: 12px; color: #999; margin-top: 4px; display: block; }
+.goods-bottom { display: flex; justify-content: space-between; align-items: center; margin-top: 10px; }
+.goods-price { font-size: 16px; color: #ff4d4f; font-weight: 700; }
+.add-btn {
+  width: 24px; height: 24px; border-radius: 50%;
+  background: #ff4d4f; color: #fff; text-align: center;
+  line-height: 24px; font-size: 16px; font-weight: 700;
+}
+.load-more { text-align: center; padding: 20px; color: #999; font-size: 13px; }

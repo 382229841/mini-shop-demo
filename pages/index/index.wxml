@@ -1,0 +1,45 @@
+<!-- 搜索栏 -->
+<view class="search-bar">
+  <input placeholder="搜索商品" bindinput="onSearch" value="{{keyword}}"/>
+  <text class="search-btn">搜索</text>
+</view>
+
+<!-- Banner 轮播 -->
+<swiper class="banner" indicator-dots autoplay interval="3000" circular>
+  <swiper-item wx:for="{{banners}}" wx:key="*this">
+    <view class="banner-item" style="background: {{item.color}};">
+      <text class="banner-title">{{item.title}}</text>
+      <text class="banner-sub">{{item.sub}}</text>
+    </view>
+  </swiper-item>
+</swiper>
+
+<!-- 分类 -->
+<view class="category">
+  <view class="cat-item" wx:for="{{categories}}" wx:key="name" bindtap="onCategory" data-name="{{item.name}}">
+    <text class="cat-icon">{{item.icon}}</text>
+    <text class="cat-name">{{item.name}}</text>
+  </view>
+</view>
+
+<!-- 商品列表标题 -->
+<view class="section-title">🔥 热门推荐</view>
+
+<!-- 商品网格 -->
+<view class="goods-grid">
+  <view class="goods-card" wx:for="{{goods}}" wx:key="id" bindtap="onDetail" data-id="{{item.id}}">
+    <view class="goods-img">{{item.icon}}</view>
+    <view class="goods-info">
+      <text class="goods-name">{{item.name}}</text>
+      <text class="goods-desc">{{item.desc}}</text>
+      <view class="goods-bottom">
+        <text class="goods-price">¥{{item.price}}</text>
+        <view class="add-btn" catchtap="onAddCart" data-id="{{item.id}}">+</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 加载更多 -->
+<view class="load-more" wx:if="{{loading}}">加载中...</view>
+<view class="load-more" wx:elif="{{!hasMore}}">— 已经到底了 —</view>

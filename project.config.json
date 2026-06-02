@@ -1,0 +1,14 @@
+{
+  "description": "优选商城 · 微信小程序 Demo",
+  "packOptions": { "ignore": [] },
+  "setting": {
+    "urlCheck": true,
+    "es6": true,
+    "enhance": true,
+    "postcss": true
+  },
+  "compileType": "miniprogram",
+  "appid": "",
+  "projectname": "mini-shop",
+  "condition": {}
+}
