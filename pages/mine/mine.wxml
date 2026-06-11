@@ -1,0 +1,27 @@
+<!-- 用户头部 -->
+<view class="user-header">
+  <view class="avatar">👤</view>
+  <text class="nickname">用户 382229841</text>
+  <text class="uid">ID: 10001</text>
+</view>
+
+<!-- 订单栏 -->
+<view class="order-bar">
+  <text class="bar-title">我的订单</text>
+  <text class="bar-all" bindtap="onAllOrders">全部订单 ›</text>
+</view>
+<view class="order-icons">
+  <view class="order-item" wx:for="{{orderStatus}}" wx:key="label" bindtap="onOrderTap" data-label="{{item.label}}">
+    <text class="order-icon">{{item.icon}}</text>
+    <text class="order-label">{{item.label}}</text>
+  </view>
+</view>
+
+<!-- 功能列表 -->
+<view class="menu-list">
+  <view class="menu-item" wx:for="{{menus}}" wx:key="title" bindtap="onMenuTap" data-title="{{item.title}}">
+    <text class="menu-icon">{{item.icon}}</text>
+    <text class="menu-title">{{item.title}}</text>
+    <text class="menu-arrow">›</text>
+  </view>
+</view>

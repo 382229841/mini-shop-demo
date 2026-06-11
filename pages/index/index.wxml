@@ -1,7 +1,7 @@
 <!-- 搜索栏 -->
 <view class="search-bar">
   <input placeholder="搜索商品" bindinput="onSearch" value="{{keyword}}"/>
-  <text class="search-btn">搜索</text>
+  <text class="search-btn" bindtap="onSearchTap">搜索</text>
 </view>
 
 <!-- Banner 轮播 -->

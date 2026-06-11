@@ -1,8 +1,36 @@
 App({
   onLaunch() {
-    console.log('商城小程序启动')
+    // 初始化购物车
+    const cart = wx.getStorageSync('cart') || []
+    this.globalData.cart = cart
+    this.updateCartBadge()
   },
   globalData: {
-    cartCount: 0
+    cart: []
+  },
+  addToCart(product) {
+    const cart = this.globalData.cart
+    const exist = cart.find(item => item.id === product.id)
+    if (exist) {
+      exist.count++
+    } else {
+      cart.push({ ...product, count: 1, checked: true })
+    }
+    wx.setStorageSync('cart', cart)
+    this.updateCartBadge()
+    wx.showToast({ title: '已加入购物车', icon: 'success', duration: 1200 })
+  },
+  removeFromCart(id) {
+    this.globalData.cart = this.globalData.cart.filter(item => item.id !== id)
+    wx.setStorageSync('cart', this.globalData.cart)
+    this.updateCartBadge()
+  },
+  updateCartBadge() {
+    const count = this.globalData.cart.reduce((sum, item) => sum + item.count, 0)
+    if (count > 0) {
+      wx.setTabBarBadge({ index: 1, text: String(count) })
+    } else {
+      wx.removeTabBarBadge({ index: 1 })
+    }
   }
 })
