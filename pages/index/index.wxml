@@ -6,7 +6,7 @@
 
 <!-- Banner 轮播 -->
 <swiper class="banner" indicator-dots autoplay interval="3000" circular>
-  <swiper-item wx:for="{{banners}}" wx:key="*this">
+  <swiper-item wx:for="{{banners}}" wx:key="id">
     <view class="banner-item" style="background: {{item.color}};">
       <text class="banner-title">{{item.title}}</text>
       <text class="banner-sub">{{item.sub}}</text>

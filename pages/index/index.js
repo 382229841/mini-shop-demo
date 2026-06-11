@@ -2,9 +2,9 @@ Page({
   data: {
     keyword: '',
     banners: [
-      { title:'新品首发', sub:'全场低至5折', color:'#ff4d4f' },
-      { title:'限时特惠', sub:'满199减50', color:'#722ed1' },
-      { title:'品牌日', sub:'精选大牌直降', color:'#1890ff' }
+      { id:1, title:'新品首发', sub:'全场低至5折', color:'#ff4d4f' },
+      { id:2, title:'限时特惠', sub:'满199减50', color:'#722ed1' },
+      { id:3, title:'品牌日', sub:'精选大牌直降', color:'#1890ff' }
     ],
     categories: [
       { icon:'📱', name:'手机' },
