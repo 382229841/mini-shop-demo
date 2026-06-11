@@ -1,9 +1,13 @@
 App({
   onLaunch() {
-    // 初始化购物车
     const cart = wx.getStorageSync('cart') || []
     this.globalData.cart = cart
-    this.updateCartBadge()
+    
+    // 延迟更新 TabBar 角标，等 TabBar 渲染完成
+    const app = this
+    setTimeout(() => {
+      try { app.updateCartBadge() } catch(e) {}
+    }, 500)
   },
   globalData: {
     cart: []
@@ -26,11 +30,15 @@ App({
     this.updateCartBadge()
   },
   updateCartBadge() {
-    const count = this.globalData.cart.reduce((sum, item) => sum + item.count, 0)
-    if (count > 0) {
-      wx.setTabBarBadge({ index: 1, text: String(count) })
-    } else {
-      wx.removeTabBarBadge({ index: 1 })
+    try {
+      const count = this.globalData.cart.reduce((sum, item) => sum + item.count, 0)
+      if (count > 0) {
+        wx.setTabBarBadge({ index: 1, text: String(count) })
+      } else {
+        wx.removeTabBarBadge({ index: 1 })
+      }
+    } catch(e) {
+      // TabBar 未就绪，忽略
     }
   }
 })
